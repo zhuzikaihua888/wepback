@@ -1,4 +1,5 @@
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 module.exports = {
     //用来切换模式的development开发模式 production用户模式
@@ -9,5 +10,24 @@ module.exports = {
     //http缓存 缓存跟这名字走 首页不能做缓存
     filename: '[name].[contenthash].js',
   },
-    
-  };
+  plugins: [new HtmlWebpackPlugin(
+    {
+      title: '闰闰',
+      template: 'src/assets/index.html'
+    }
+    )],
+      module: {
+        rules: [
+          {
+            test: /\.css$/i,
+            use: ["style-loader", "css-loader"],
+          },
+        ],
+      },
+    };
+   
+
+
+  
+  
+  
