@@ -1,3 +1,3 @@
-import css from 'x.css'
-console.log('hi')
+import  './x.js'
+
 console.log('小桂子')
