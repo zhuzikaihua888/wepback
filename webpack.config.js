@@ -1,8 +1,9 @@
 
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 module.exports = {
-    //用来切换模式的development开发模式 production用户模式
+  //用来切换模式的development开发模式 production用户模式
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
@@ -18,20 +19,33 @@ module.exports = {
     {
       title: '闰闰',
       template: 'src/assets/index.html'
-    }
-    )],
-      module: {
-        rules: [
+    }),
+  new MiniCssExtractPlugin({
+    filename: "[name].[contenthash].css",
+    chunkFilename: "[id].[contenthash].css",
+    ignoreOrder: false,
+  }),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [
           {
-            test: /\.css$/i,
-            use: ["style-loader", "css-loader"],
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: "../",
+            },
           },
+          "css-loader",
         ],
+        //use: ["style-loader", "css-loader"],
       },
-    };
-   
+    ],
+  },
+};
 
 
-  
-  
-  
+
+
+
