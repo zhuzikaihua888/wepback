@@ -4,6 +4,10 @@ const path = require('path');
 module.exports = {
     //用来切换模式的development开发模式 production用户模式
   mode: 'development',
+  devtool: 'inline-source-map',
+  devServer: {
+    static: './dist',
+  },
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),

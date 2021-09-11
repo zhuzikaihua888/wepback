@@ -1,5 +1,5 @@
 Arguments: 
-  D:\Soft\nodejs\node.exe D:\Soft\yarn\bin\yarn.js install
+  D:\Soft\nodejs\node.exe D:\Soft\yarn\bin\yarn.js start
 
 PATH: 
   C:\Users\Admin\bin;D:\Soft\cmder\bin;D:\Soft\cmder\vendor\bin;D:\Soft\cmder\vendor\git-for-windows\bin;D:\Soft\cmder\vendor\git-for-windows\usr\local\bin;D:\Soft\cmder\vendor\git-for-windows\usr\bin;D:\Soft\cmder\vendor\git-for-windows\usr\bin;D:\Soft\cmder\vendor\git-for-windows\opt\bin;D:\Soft\cmder\vendor\conemu-maximus5\ConEmu\Scripts;D:\Soft\cmder\vendor\conemu-maximus5;D:\Soft\cmder\vendor\conemu-maximus5\ConEmu;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;D:\Soft\yarn\bin;D:\Soft\nodejs;C:\Users\Admin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Admin\AppData\Local\Yarn\bin;C:\Users\Admin\Desktop;C:\Users\Admin\AppData\Roaming\npm;D:\Soft\cmder;D:\Soft\cmder\vendor\git-for-windows\usr\bin\vendor_perl;D:\Soft\cmder\vendor\git-for-windows\usr\bin\core_perl
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: C:\Users\Admin\Desktop\前端\wepback-dom\package.json: Unexpected string in JSON at position 3041
+  SyntaxError: C:\Users\Admin\Desktop\前端\wepback-dom\package.json: Unexpected token } in JSON at position 3384
       at JSON.parse (<anonymous>)
       at D:\Soft\yarn\lib\cli.js:1625:59
       at Generator.next (<anonymous>)
@@ -121,18 +121,7 @@ npm manifest:
       "yocto-queue": "^0.1.0"
     },
     "devDependencies": {
-      "html-webpack-plugin": "^5.3.2"
-    },
-    "scripts": {
-      "build": "rm -rf dist&&webpack",
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "webpack"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"
-    "devDependencies": {
-      "css-loader": "^3.2.0",
+      "css-loader": "^3.6.0",
       "dart-sass": "^1.23.7",
       "file-loader": "^5.0.2",
       "html-webpack-plugin": "^3.2.0",
@@ -140,13 +129,22 @@ npm manifest:
       "less-loader": "^5.0.0",
       "mini-css-extract-plugin": "^0.8.0",
       "sass-loader": "^8.0.0",
-      "style-loader": "^1.0.1",
+      "style-loader": "^1.3.0",
       "stylus": "^0.54.7",
       "stylus-loader": "^3.0.2",
       "webpack": "^4.41.2",
       "webpack-cli": "^3.3.10",
-      "webpack-dev-server": "^3.9.0"
-    }
+      "webpack-dev-server": "^3.11.2"
+    },
+    "scripts": {
+      "start": "webpack serve ",
+      "build": "rm -rf dist && webpack ",
+      "test": "echo \"Error: no test specified\" && exit 1",
+     
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
   }
 
 yarn manifest: 
